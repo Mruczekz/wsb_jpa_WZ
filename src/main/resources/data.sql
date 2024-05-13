@@ -8,9 +8,9 @@ VALUES
 -- Dodawanie lekarzy
 INSERT INTO DOCTOR (id, first_name, last_name, telephone_number, email, doctor_number, specialization)
 VALUES
-    (1, 'Jan', 'Kowalski', '123456789', 'jan.kowalski@example.com', 'DOC123', 'Chirurg'),
-    (2, 'Anna', 'Nowak', '987654321', 'anna.nowak@example.com', 'DOC456', 'Pediatra'),
-    (3, 'Piotr', 'Wiśniewski', '555444333', 'piotr.wisniewski@example.com', 'DOC789', 'Internista');
+    (1, 'Jan', 'Kowalski', '123456789', 'jan.kowalski@example.com', 'DOC123', 'SURGEON'),
+    (2, 'Anna', 'Nowak', '987654321', 'anna.nowak@example.com', 'DOC456', 'DERMATOLOGIST'),
+    (3, 'Piotr', 'Wiśniewski', '555444333', 'piotr.wisniewski@example.com', 'DOC789', 'OCULIST');
 
 -- Dodawanie pacjentów
 INSERT INTO PATIENT (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, sex)
