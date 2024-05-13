@@ -47,11 +47,11 @@ VALUES
 -- Dodawanie leczenia medycznego
 INSERT INTO MEDICAL_TREATMENT (id, description, type, VISIT_ID)
 VALUES
-    (1, 'Przepisanie leków', 'Farmakoterapia', 1),
-    (2, 'Przegląd historii choroby', 'Diagnostyka', 2),
-    (3, 'Szczepienie przeciw grypie', 'Profilaktyka', 3),
-    (4, 'Badanie krwi', 'Diagnostyka', 4),
-    (5, 'Kontrola ciśnienia krwi', 'Diagnostyka', 5),
-    (6, 'Zdejmowanie szwów', 'Procedura', 6),
-    (7, 'Zalecenia dietetyczne', 'Zalecenia', 7),
-    (8, 'Konsultacja psychologiczna', 'Konsultacja', 8);
+    (1, 'Przepisanie leków', 'RTG', 1),
+    (2, 'Przegląd historii choroby', 'EKG', 2),
+    (3, 'Szczepienie przeciw grypie', 'USG', 3),
+    (4, 'Badanie krwi', 'RTG', 4),
+    (5, 'Kontrola ciśnienia krwi', 'EKG', 5),
+    (6, 'Zdejmowanie szwów', 'USG', 6),
+    (7, 'Zalecenia dietetyczne', 'RTG', 7),
+    (8, 'Konsultacja psychologiczna', 'EKG', 8);
