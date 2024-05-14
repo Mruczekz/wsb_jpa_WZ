@@ -1,6 +1,5 @@
 package com.capgemini.wsb.service.impl;
 
-import com.capgemini.wsb.dto.PatientTO;
 import com.capgemini.wsb.service.DoctorService;
 import com.capgemini.wsb.service.PatientService;
 import com.capgemini.wsb.service.VisitService;
