@@ -41,4 +41,9 @@ public class PatientServiceImpl implements PatientService {
     public List<VisitTO> getPatientVisits(long patientId) {
         return null;
     }
+
+    @Override
+    public List<PatientTO> getPatientsByLastName(String lastName) {
+        return PatientMapper.INSTANCE.patientListToPatientTOList(patientDao.findPatientByLastName(lastName));
+    }
 }

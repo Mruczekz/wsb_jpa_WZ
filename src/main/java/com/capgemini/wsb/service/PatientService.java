@@ -13,4 +13,7 @@ public interface PatientService {
     PatientTO addPatient(PatientTO patientTO);
 
     List<VisitTO> getPatientVisits(long patientId);
+
+    List<PatientTO> getPatientsByLastName (String lastName);
+
 }

@@ -31,4 +31,9 @@ class PatientServiceImplTest {
         assertNull(visitService.findById(2));
         assertNotNull(doctorService.findById(1));
     }
+
+    @Test
+    void getPatientsList(){
+        patientService.getPatientsByLastName("Zielonka");
+    }
 }

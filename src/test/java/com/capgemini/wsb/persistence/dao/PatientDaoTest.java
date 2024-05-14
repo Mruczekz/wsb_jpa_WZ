@@ -13,4 +13,9 @@ class PatientDaoTest {
 
     @Autowired
     private PatientDao patientDao;
+
+
+    @Test
+    void name() {
+    }
 }
