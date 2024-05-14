@@ -3,8 +3,10 @@ package com.capgemini.wsb.service.impl;
 import com.capgemini.wsb.dto.PatientTO;
 import com.capgemini.wsb.dto.VisitTO;
 import com.capgemini.wsb.mapper.PatientMapper;
+import com.capgemini.wsb.mapper.VisitMapper;
 import com.capgemini.wsb.persistence.dao.PatientDao;
 import com.capgemini.wsb.persistence.entity.PatientEntity;
+import com.capgemini.wsb.persistence.entity.VisitEntity;
 import com.capgemini.wsb.service.PatientService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +41,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<VisitTO> getPatientVisits(long patientId) {
-        return null;
+        return VisitMapper.INSTANCE.visitListToVisitTOList(patientDao.findOne(patientId).getVisits());
     }
 
     @Override
