@@ -27,17 +27,6 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public PatientTO findByLastName(String LastName) {
-        for (long i = 1; i < patientDao.count(); i++){
-            PatientEntity patientEntity = patientDao.findOne(i);
-            if(patientEntity.getLastName().equals(LastName)){
-                return PatientMapper.INSTANCE.patientToPatientTO(patientEntity);
-            }
-        }
-        return null;
-    }
-
-    @Override
     public long deleteById(long patientId) {
         patientDao.delete(patientId);
         return patientId;

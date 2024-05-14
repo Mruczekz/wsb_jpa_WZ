@@ -8,8 +8,6 @@ import java.util.List;
 public interface PatientService {
     public PatientTO findById(final long id);
 
-    public PatientTO findByLastName(final String LastName);
-
     long deleteById(long patientId);
 
     PatientTO addPatient(PatientTO patientTO);
