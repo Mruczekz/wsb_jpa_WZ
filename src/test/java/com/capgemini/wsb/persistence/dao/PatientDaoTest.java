@@ -25,4 +25,13 @@ class PatientDaoTest {
         //then
         assertEquals(1, patientEntityList.size());
     }
+
+    @Test
+    void findPatientsWithMoreThanSpecifiedVisitsTest(){
+        //given
+        //when
+        int numberOfVisits = 2;
+        //then
+        assertEquals(2, patientDao.findPatientsWithMoreThanSpecifiedVisits(numberOfVisits).size());
+    }
 }
