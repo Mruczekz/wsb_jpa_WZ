@@ -6,7 +6,7 @@ import com.capgemini.wsb.dto.VisitTO;
 import java.util.List;
 
 public interface PatientService {
-    public PatientTO findById(final long id);
+    PatientTO findById(final long id);
 
     long deleteById(long patientId);
 

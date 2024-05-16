@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -24,8 +25,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientTO findById(long id) {
-        final PatientEntity patientEntity = patientDao.findOne(id);
-        return PatientMapper.INSTANCE.patientToPatientTO(patientEntity);
+        return PatientMapper.mapToTO(patientDao.getOne(id));
     }
 
     @Override
@@ -41,11 +41,11 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<VisitTO> getPatientVisits(long patientId) {
-        return VisitMapper.INSTANCE.visitListToVisitTOList(patientDao.findOne(patientId).getVisits());
+        return patientDao.findOne(patientId).getVisits().stream().map(VisitMapper::mapToTO).collect(Collectors.toList());
     }
 
     @Override
     public List<PatientTO> getPatientsByLastName(String lastName) {
-        return PatientMapper.INSTANCE.patientListToPatientTOList(patientDao.findPatientByLastName(lastName));
+        return null;
     }
 }

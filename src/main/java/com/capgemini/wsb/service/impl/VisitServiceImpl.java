@@ -8,6 +8,8 @@ import com.capgemini.wsb.service.VisitService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class VisitServiceImpl implements VisitService {
@@ -20,7 +22,10 @@ public class VisitServiceImpl implements VisitService {
 
     @Override
     public VisitTO findById(long id) {
-        final VisitEntity visitEntity = visitDao.findOne(id);
-        return VisitMapper.INSTANCE.visitToVisitTO(visitEntity);
+        return VisitMapper.mapToTO(visitDao.findOne(id));
+    }
+
+    public List<VisitTO> findAllVisits(){
+        return null;
     }
 }

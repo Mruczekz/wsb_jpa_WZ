@@ -1,20 +1,29 @@
 package com.capgemini.wsb.mapper;
 
 import com.capgemini.wsb.dto.MedicalTreatmentTO;
-import com.capgemini.wsb.dto.VisitTO;
 import com.capgemini.wsb.persistence.entity.MedicalTreatmentEntity;
-import com.capgemini.wsb.persistence.entity.VisitEntity;
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
-import java.util.List;
+public final class MedicalTreatmentMapper {
+    public static MedicalTreatmentTO mapToTO(final MedicalTreatmentEntity medicalTreatmentEntity) {
+        if (medicalTreatmentEntity == null)
+        {
+            return null;
+        }
+        final MedicalTreatmentTO medicalTreatmentTO = new MedicalTreatmentTO();
+        medicalTreatmentTO.setId(medicalTreatmentEntity.getId());
+        medicalTreatmentTO.setDescription(medicalTreatmentEntity.getDescription());
+        medicalTreatmentTO.setType(medicalTreatmentEntity.getType());
+        return medicalTreatmentTO;
+    }
 
-@Mapper
-public interface MedicalTreatmentMapper {
-    MedicalTreatmentMapper INSTANCE = Mappers.getMapper(MedicalTreatmentMapper.class);
-
-    MedicalTreatmentTO medicalTreatmentToMedicalTreatmentTO(MedicalTreatmentEntity medicalTreatmentEntity);
-
-    List<MedicalTreatmentTO> medicalTreatmentListToMedicalTreatmentTOList(List<MedicalTreatmentEntity> medicalTreatmentEntityList);
-
+    public static MedicalTreatmentEntity mapToEntity(final MedicalTreatmentTO medicalTreatmentTO) {
+        if (medicalTreatmentTO == null) {
+            return null;
+        }
+        final MedicalTreatmentEntity medicalTreatmentEntity = new MedicalTreatmentEntity();
+        medicalTreatmentEntity.setId(medicalTreatmentTO.getId());
+        medicalTreatmentEntity.setDescription(medicalTreatmentTO.getDescription());
+        medicalTreatmentEntity.setType(medicalTreatmentTO.getType());
+        return medicalTreatmentEntity;
+    }
 }
