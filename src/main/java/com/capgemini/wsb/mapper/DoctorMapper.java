@@ -12,6 +12,4 @@ public interface DoctorMapper {
     DoctorMapper INSTANCE = Mappers.getMapper(DoctorMapper.class);
 
     DoctorTO doctorToDoctorTO(DoctorEntity doctorEntity);
-
-    List<DoctorTO> doctorListToDoctorTOList(List<DoctorEntity> doctorEntityList);
 }
