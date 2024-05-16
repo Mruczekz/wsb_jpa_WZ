@@ -34,4 +34,13 @@ class PatientDaoTest {
         //then
         assertEquals(2, patientDao.findPatientsWithMoreThanSpecifiedVisits(numberOfVisits).size());
     }
+
+    @Test
+    void getPatientsBySexTest(){
+        //given
+        //when
+        char testSex = 'M';
+        //then
+        assertEquals(1, patientDao.findPatientsBySex(testSex).size());
+    }
 }
