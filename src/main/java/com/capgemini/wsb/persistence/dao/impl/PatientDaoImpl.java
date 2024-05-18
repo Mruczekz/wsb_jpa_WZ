@@ -18,17 +18,13 @@ public class PatientDaoImpl extends AbstractDao<PatientEntity, Long> implements 
 
     @Override
     public List<PatientEntity> findPatientsWithMoreThanSpecifiedVisits(int numberOfVisits) {
-        TypedQuery<PatientEntity> query = entityManager.createQuery("" +
-                "SELECT patient FROM PatientEntity patient WHERE size(patient.visits) > :minVisits",
-                PatientEntity.class).setParameter("minVisits", numberOfVisits);
+        TypedQuery<PatientEntity> query = entityManager.createQuery("SELECT patient FROM PatientEntity patient WHERE size(patient.visits) > :minVisits", PatientEntity.class).setParameter("minVisits", numberOfVisits);
         return query.getResultList();
     }
 
     @Override
     public List<PatientEntity> findPatientsBySex(char sex) {
-        TypedQuery<PatientEntity> query = entityManager.createQuery("" +
-                "SELECT patient FROM PatientEntity patient WHERE sex IN :sex",
-                PatientEntity.class).setParameter("sex", sex);
+        TypedQuery<PatientEntity> query = entityManager.createQuery("SELECT patient FROM PatientEntity patient WHERE sex IN :sex", PatientEntity.class).setParameter("sex", sex);
         return query.getResultList();
     }
 }

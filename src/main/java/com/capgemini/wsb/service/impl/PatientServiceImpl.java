@@ -6,7 +6,6 @@ import com.capgemini.wsb.mapper.PatientMapper;
 import com.capgemini.wsb.mapper.VisitMapper;
 import com.capgemini.wsb.persistence.dao.PatientDao;
 import com.capgemini.wsb.persistence.entity.PatientEntity;
-import com.capgemini.wsb.persistence.entity.VisitEntity;
 import com.capgemini.wsb.service.PatientService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

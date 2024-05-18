@@ -6,7 +6,7 @@ import com.capgemini.wsb.persistence.entity.PatientEntity;
 import java.util.List;
 
 public interface PatientDao extends Dao<PatientEntity, Long> {
-    List<PatientEntity> findPatientByLastName(String LastName);
+    List<PatientEntity> findPatientByLastName(String lastName);
 
     List<PatientEntity> findPatientsWithMoreThanSpecifiedVisits (int numberOfVisits);
 
